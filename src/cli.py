@@ -34,7 +34,6 @@ def cli_arg_parse() -> argparse.Namespace:
         "-u",
         "--url",
         help="Url of the website that should be monitored",
-        required=True,
     )
 
     parser.add_argument(

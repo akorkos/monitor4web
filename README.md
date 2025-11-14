@@ -26,7 +26,7 @@ cd monitor4web
 ## Usage
 
 ```bash
-python src/main.py --url <website_url> [options]
+python src/main.py [options]
 ```
 
 ### Options
@@ -34,10 +34,27 @@ python src/main.py --url <website_url> [options]
 | Option | Description | Required | Default |
 |--------|-------------|----------|---------|
 | `--create-db` | Create the SQLite database and the `request_log` table. | No | False |
-| `-u, --url` | URL of the website to monitor. | Yes | None |
+| `-u, --url` | URL of the website to monitor. | No | None |
 | `--retry-attempts` | Number of times to retry accessing the website. | No | 1 |
 | `--check-website` | Check the website and log the results in the database. | No | False |
 | `--start-date` | Start date for querying historical availability (`YYYY-MM-DD H:M:S`). | No | None |
 | `--end-date` | End date for querying historical availability (`YYYY-MM-DD H:M:S`). | No | None |
 | `-v, --version` | Display the program version. | No | None |
 
+### Examples 
+Create the database:
+```bash
+python src/main.py --create-db
+```
+Check website availability once:
+```bash
+python src/main.py --url https://example.com --check-website
+```
+Check website with retries:
+```bash
+python src/main.py --url https://example.com --check-website --retry-attempts 3
+```
+Query availability in a date range:
+```bash
+python src/main.py --url https://example.com --start-date "2025-01-01 00:00:00" --end-date "2025-11-01 23:59:59"
+```

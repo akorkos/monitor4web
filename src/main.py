@@ -40,6 +40,8 @@ def main() -> None:
         print(f"Availability of the webpage {args.url} is: {availability}%.")
     elif total_attempts == 0 and total_retries > 0: 
         print("There are none successfull attempts recorded.")
+    elif args.create_db:
+        print("Database creation triggered. See logs for more details.")
     else:
         print("Website not found in the database.")
 
