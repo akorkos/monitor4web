@@ -58,3 +58,6 @@ Query availability in a date range:
 ```bash
 python src/main.py --url https://example.com --start-date "2025-01-01 00:00:00" --end-date "2025-11-01 23:59:59"
 ```
+### Side note
+
+Logs and database, are stored in `.logs/` and `.db/` respectively.  
